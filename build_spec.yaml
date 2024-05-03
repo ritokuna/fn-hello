@@ -4,8 +4,8 @@ timeoutInSeconds: 10000
 shell: bash
 env:
   variables:
-    function_name: fn-hello-python
-    function_version: 0.0.3
+    function_name: fn-hello-python-github
+    function_version: 0.0.1
   exportedVariables:
     - tag
 
@@ -14,7 +14,7 @@ steps:
     name: "Docker image build"
     timeoutInSeconds: 4000
     command: |
-      cd fn-hello-python
+      cd fn-hello-python-github
       fn build
       docker tag ${function_name}:${function_version} fn-hello-image
       tag=${function_version}
